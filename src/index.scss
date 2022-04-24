@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli.ttf');
+}
+
+@font-face {
+  font-family: 'Muli-Bold';
+  src: url('./fonts/Muli-Bold.ttf');
+}
+
+body {
+  margin:0;
+  font-size: 14px;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Muli-Bold';
+  font-weight: 700;
+}
+
+p, span {
+  font-family: 'Muli';
+  font-weight: 400;
+  font-size: 12px;
+}
+
+p, h4 {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
