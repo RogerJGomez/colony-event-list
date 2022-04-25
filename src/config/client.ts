@@ -16,6 +16,7 @@ const provider = new InfuraProvider()
 const wallet = Wallet.createRandom()
 // Connect your wallet to the provider
 const connectedWallet = wallet.connect(provider)
+console.log(connectedWallet)
 
 // Get a network client instance
 const networkClient = await getColonyNetworkClient(
@@ -25,8 +26,9 @@ const networkClient = await getColonyNetworkClient(
     networkAddress: MAINNET_NETWORK_ADDRESS,
   },
 )
-
+console.log(networkClient)
 // Get the colony client instance for the betacolony
 export const colonyClient = await networkClient.getColonyClient(
   MAINNET_BETACOLONY_ADDRESS,
 )
+console.log(colonyClient)
