@@ -5,12 +5,14 @@
     display: flex;
     align-items: center;
     padding: 26px 20px;
+    transition: 0.3s ease;
     &:hover {
         max-height: auto;
         .text {
             white-space: break-spaces;
         }
         align-items: flex-start;
+        background-color: #f3f3f3;
     }
     &:first-child{
         border-top-left-radius: 6px;

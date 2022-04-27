@@ -17,7 +17,7 @@ export const getColonyInitialisedEvents = async (
 
   const parsedEvents = eventLogs.map(async (event: Log) => {
     const parsedEvent = client.interface.parseLog(event)
-    const logTime = await getBlockTime(provider, parsedEvent.values.blockHash)
+    const logTime = await getBlockTime(provider, event.blockHash ?? '')
 
     return {
       type: parsedEvent.name,
@@ -42,7 +42,7 @@ const getColonyRoleSetEvent = async (
     const userAddress: string = parsedEvent.values.user
     const role = ColonyRole[parsedEvent.values.role]
     const domainId = new utils.BigNumber(parsedEvent.values.domainId).toString()
-    const logTime = await getBlockTime(provider, parsedEvent.values.blockHash)
+    const logTime = await getBlockTime(provider, event.blockHash ?? '')
 
     return {
       type: parsedEvent.name,
@@ -72,7 +72,7 @@ const getColonyPayoutClaimedEventLogs = async (
     ).toString()
     const { associatedTypeId } = await client.getFundingPot(fundingPotId)
     const { recipient: userAddress } = await client.getPayment(associatedTypeId)
-    const logTime = await getBlockTime(provider, parsedEvent.values.blockHash)
+    const logTime = await getBlockTime(provider, event.blockHash ?? '')
     const claimedAmount = humanReadableAmount.div(wei.pow(18)).toString()
 
     return {
@@ -95,10 +95,10 @@ const getColonyDomainAddedEventLogs = async (
 ): Promise<EventLog[]> => {
   const eventFilter = client.filters.DomainAdded(null)
   const eventLogs = await getLogs(client, eventFilter)
-  const parsedEvents = eventLogs.map(async (event: Log) => {
+  const parsedEvents = eventLogs.map(async (event: Log, index) => {
     const parsedEvent = client.interface.parseLog(event)
     const domainId = new utils.BigNumber(parsedEvent.values.domainId).toString()
-    const logTime = await getBlockTime(provider, parsedEvent.values.blockHash)
+    const logTime = await getBlockTime(provider, event.blockHash ?? '')
 
     return {
       type: parsedEvent.name,
