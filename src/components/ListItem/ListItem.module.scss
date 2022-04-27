@@ -1,17 +1,15 @@
 .listItem {
-    background-color: #ffffff;
+    background-color: white;
+    margin: 0;
     max-height: 89px;
-    padding: 26px 20px;
-    max-width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 26px 20px;
     &:hover {
-        height: auto;
-        h4 {
-            white-space:normal;
-            overflow: visible;
-            text-overflow:initial;
+        max-height: auto;
+        .text {
+            white-space: break-spaces;
         }
     }
     &:first-child{
@@ -31,17 +29,20 @@
         border-radius: 50%;
     }
     .listContent {
-        display: flex;
-        flex-direction: column;
-        width: 92%;
+        overflow: hidden;
+        padding-left: 15px;
     }
-    h4 {
+    .text {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin:0;
+        font-size:14px
     }
-    p {
+    .date {
         color: #9C9C9C;
+        margin: 0;
+        font-size: 12px;
     }
 }
 

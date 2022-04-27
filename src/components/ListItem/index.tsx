@@ -7,18 +7,20 @@ interface Props {
   image: string
 }
 
-export const ListItem: React.FC<Props> = ({
+const ListItem: React.FC<Props> = ({
   text,
   image,
   date,
 }: Props): React.ReactElement => {
   return (
-    <div className={styles.listItem}>
+    <li className={styles.listItem}>
       <img src={image} className={styles.avatar} alt='profile-pic' />
       <div className={styles.listContent}>
-        <h4>{text}</h4>
-        <p>{date}</p>
+        <p className={styles.text}>{text}</p>
+        <p className={styles.date}>{date}</p>
       </div>
-    </div>
+    </li>
   )
 }
+
+export default ListItem

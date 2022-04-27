@@ -1,31 +1,19 @@
 @font-face {
   font-family: 'Muli';
-  src: url('./fonts/Muli.ttf');
+  src: url('./assets/fonts/Muli.ttf');
+  font-style: normal;
+  font-weight: 400;
 }
 
 @font-face {
   font-family: 'Muli-Bold';
-  src: url('./fonts/Muli-Bold.ttf');
+  src: url('./assets/fonts/Muli-Bold.ttf');
+  font-style: normal;
+  font-weight: 700;
 }
 
 body {
   margin:0;
-  font-size: 14px;
   overflow-x: hidden;
-}
-
-h1,h2,h3,h4,h5 {
-  font-family: 'Muli-Bold';
-  font-weight: 700;
-}
-
-p, span {
-  font-family: 'Muli';
-  font-weight: 400;
-  font-size: 12px;
-}
-
-p, h4 {
-  margin-block-end: 0;
-  margin-block-start: 0;
+  font-family: "Muli", sans-serif;
 }
