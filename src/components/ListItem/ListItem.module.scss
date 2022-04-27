@@ -3,7 +3,6 @@
     margin: 0;
     max-height: 89px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 26px 20px;
     &:hover {
@@ -11,6 +10,7 @@
         .text {
             white-space: break-spaces;
         }
+        align-items: flex-start;
     }
     &:first-child{
         border-top-left-radius: 6px;
@@ -24,8 +24,6 @@
         border-bottom: 1px solid #E7E7E7;
     }
     .avatar {
-        width: 37px;
-        height: 37px;
         border-radius: 50%;
     }
     .listContent {
@@ -43,6 +41,10 @@
         color: #9C9C9C;
         margin: 0;
         font-size: 12px;
+    }
+    .bold {
+        font-weight: 700;
+        margin: 0 5px;
     }
 }
 
